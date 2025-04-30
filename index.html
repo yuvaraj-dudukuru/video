@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mini Video Streaming App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="auth-section">
+    <div id="login-form">
+      <h2>Login</h2>
+      <input type="text" id="username" placeholder="Username">
+      <button onclick="login()">Login</button>
+    </div>
+    <div id="logout-section" style="display: none;">
+      <span id="welcome-msg"></span>
+      <button onclick="logout()">Logout</button>
+    </div>
+  </div>
+
+  <div id="main-content" style="display: none;">
+    <div class="upload-section">
+      <input type="file" id="video-upload" accept="video/*">
+      <input type="text" id="video-title" placeholder="Enter video title">
+      <button onclick="uploadVideo()">Upload Video</button>
+    </div>
+
+    <input type="text" id="search-bar" placeholder="Search videos..." onkeyup="searchVideos()">
+
+    <div id="video-container"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

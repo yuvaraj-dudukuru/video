@@ -1,38 +1,122 @@
-body {
-  font-family: Arial, sans-serif;
-  background: #f0f0f0;
-  padding: 20px;
+/* Reset and Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-#auth-section, .upload-section {
-  margin-bottom: 20px;
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #fdfbfb, #ebedee);
+  padding: 40px;
+  color: #333;
+}
+
+/* Auth Section */
+#auth-section {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+#login-form, #logout-section {
+  background: #fff;
+  padding: 20px 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+#login-form h2 {
+  margin-bottom: 15px;
+  text-align: center;
 }
 
 input[type="text"], input[type="file"] {
-  margin: 5px;
-  padding: 8px;
-  width: 250px;
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
 }
 
+/* Buttons */
 button {
-  padding: 8px 12px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
   cursor: pointer;
+  transition: background 0.3s;
 }
 
-#video-container {
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Main Content */
+#main-content {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Upload Section */
+.upload-section {
+  background: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
   display: flex;
   flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.upload-section input[type="text"] {
+  flex: 1;
+}
+
+/* Search Bar */
+#search-bar {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  margin: 10px 0 25px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+
+/* Video Grid */
+#video-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 20px;
 }
 
+/* Video Card */
 .video-card {
   background: white;
-  border: 1px solid #ccc;
-  padding: 10px;
-  width: 300px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 15px;
+  transition: transform 0.2s;
+}
+
+.video-card h4 {
+  margin-bottom: 10px;
+  font-size: 18px;
+  color: #333;
+}
+
+.video-card:hover {
+  transform: translateY(-5px);
 }
 
 video {
   width: 100%;
-  height: auto;
+  border-radius: 10px;
 }

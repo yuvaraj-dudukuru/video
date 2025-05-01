@@ -2,31 +2,46 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Mini Video Streaming App</title>
+  <title>Video Streaming App</title>
   <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <div id="auth-section">
-    <div id="login-form">
-      <h2>Login</h2>
-      <input type="text" id="username" placeholder="Username">
-      <button onclick="login()">Login</button>
+
+  <!-- Navbar -->
+  <nav id="navbar">
+    <h2><i class="fas fa-video"></i> StreamIt</h2>
+    <div id="user-section">
+      <span id="username-display"></span>
+      <button onclick="logout()"><i class="fas fa-sign-out-alt"></i> Logout</button>
+      <button id="darkModeToggle">🌙 Dark Mode</button>
+
     </div>
-    <div id="logout-section" style="display: none;">
-      <span id="welcome-msg"></span>
-      <button onclick="logout()">Logout</button>
+  </nav>
+
+  <!-- Login Modal -->
+  <div id="login-modal" class="modal">
+    <div class="modal-content">
+      <h3><i class="fas fa-user"></i> Login</h3>
+      <input type="text" id="username" placeholder="Enter your name">
+      <button onclick="login()"><i class="fas fa-sign-in-alt"></i> Login</button>
     </div>
   </div>
 
+  <!-- Main Content -->
   <div id="main-content" style="display: none;">
+    <!-- Upload Section -->
     <div class="upload-section">
       <input type="file" id="video-upload" accept="video/*">
-      <input type="text" id="video-title" placeholder="Enter video title">
-      <button onclick="uploadVideo()">Upload Video</button>
+      <input type="text" id="video-title" placeholder="Video title">
+      <input type="text" id="video-tags" placeholder="Tags (comma-separated)">
+      <button onclick="uploadVideo()"><i class="fas fa-upload"></i> Upload</button>
     </div>
 
-    <input type="text" id="search-bar" placeholder="Search videos..." onkeyup="searchVideos()">
+    <!-- Search & Filter -->
+    <input type="text" id="search-bar" placeholder="Search by title or tag..." onkeyup="searchVideos()">
 
+    <!-- Video Grid -->
     <div id="video-container"></div>
   </div>
 
